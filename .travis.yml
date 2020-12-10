@@ -8,7 +8,7 @@ install: npm install
 
 branches:
   only:
-  - master
+  - main
 
 
 deploy:
