@@ -1,0 +1,21 @@
+.auth-card {
+  max-width: 400px;
+  margin: 3rem auto;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: 2px solid #3F51B5;
+  border-radius: 10px;
+
+}
+
+.auth-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.btn-submit {
+  margin-top: 1rem;
+}

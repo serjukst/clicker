@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="rigth-column">
+    <h1>Hello, {{ user.name }}!</h1>
+    <p>You have made {{ game.clicks }} clicks</p>
+    <button
+      mat-raised-button
+      color="primary"
+      class="btn-click"
+      [disabled]="game.isOver"
+      (click)="playGame()"
+    >
+      {{ game.state }}
+    </button>
+    <p>Timer: {{ game.timer }} sec</p>
+    <mat-progress-bar
+      mode="determinate"
+      [value]="(game.timer / game.initialTimer) * 100"
+    ></mat-progress-bar>
+  </div>
+  <div class="left-column">
+    <h4>Set game mode:</h4>
+    <form
+      [formGroup]="form"
+      (change)="changeGameMode($event)"
+      class="radio-group"
+    >
+      <label class="radio-button"
+        ><input type="radio" formControlName="timer" value="5" />5 sec</label
+      >
+      <label class="radio-button"
+        ><input type="radio" formControlName="timer" value="10" />10 sec</label
+      >
+      <label class="radio-button"
+        ><input type="radio" formControlName="timer" value="15" />15 sec</label
+      >
+    </form>
+    <div class="buttons">
+      <button
+        mat-raised-button
+        color="warn"
+        class="btn-reset"
+        (click)="resetGame()"
+      >
+        Reset
+      </button>
+      <button
+        mat-raised-button
+        (click)="changeUser()"
+        [disabled]="game.isStarted"
+      >
+        Change name
+      </button>
+    </div>
+
+    <h3>
+      Previous record for {{ form.controls.timer.value }} sec is:
+      {{ record }} clicks
+    </h3>
+    <div class="message" *ngIf="game.isOver">
+      <h3>{{ createMessage(game, user.name) }}</h3>
+    </div>
+  </div>
+</div>

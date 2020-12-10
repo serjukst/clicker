@@ -1,0 +1,15 @@
+<div class="auth-card">
+  <h1>What is your name?</h1>
+  <form [formGroup]="form" class="auth-form" (ngSubmit)="submit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" [errorStateMatcher]="matcher" />
+      <mat-error *ngIf="form.get('name').invalid">
+        Name is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <button type="submit" mat-raised-button color="primary" class="btn-submit">
+      Go to game
+    </button>
+  </form>
+</div>
