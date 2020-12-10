@@ -15,4 +15,4 @@ deploy:
   skip_cleanup: true
   provider: heroku
   app: app-clicker20
-  api_key: 4c33e114-3aae-4ac8-bc75-7d8d401c644c
+  api_key: e335dc77-431f-47ed-a8ec-2869938cf1f5
