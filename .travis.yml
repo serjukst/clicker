@@ -12,6 +12,7 @@ branches:
 
 
 deploy:
+  skip_cleanup: true
   provider: heroku
   app: app-clicker20
   api_key:
