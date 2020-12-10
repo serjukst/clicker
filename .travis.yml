@@ -16,4 +16,4 @@ deploy:
   provider: heroku
   app: app-clicker20
   api_key:
-    secure: "31cb1262-0133-47d4-af00-3c0c57ed5731"
+    secure: 31cb1262-0133-47d4-af00-3c0c57ed5731
